@@ -1,0 +1,1164 @@
+﻿@model HomeVM;
+<!--==========================
+    MENU STYLE 01 START
+===========================-->
+<section class="menu_item_3 mt_110 xs_mt_90 pb_25">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 wow fadeInUp">
+                <div class="section_heading heading_left mb_45">
+                    <h2>Food Menu</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row wow fadeInUp">
+            <div class="col-12">
+                <div class="menu_item_3_area">
+                    <ul>
+                        <li>
+                            <p><span>Breakfast - Menu</span> 06.am - 11.am</p>
+                            <div class="img">
+                                <img src="assets/images/menu_item_3_img_3.jpg" alt="menu item"
+                                     class="img-fluid w-100">
+                            </div>
+                            <a href="menu_details.html"><i class="far fa-arrow-right"></i></a>
+                        </li>
+                        <li>
+                            <p><span>Lunch - Menu</span> 12.am - 6.pm</p>
+                            <div class="img">
+                                <img src="assets/images/menu_item_3_img_1.jpg" alt="menu item"
+                                     class="img-fluid w-100">
+                            </div>
+                            <a href="menu_details.html"><i class="far fa-arrow-right"></i></a>
+                        </li>
+                        <li>
+                            <p><span>Dinner - Menu</span> 07.pm - 11.pm</p>
+                            <div class="img">
+                                <img src="assets/images/menu_item_3_img_2.jpg" alt="menu item"
+                                     class="img-fluid w-100">
+                            </div>
+                            <a href="menu_details.html"><i class="far fa-arrow-right"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="popular_food pt_110 xs_pt_90 pb_90 mb_120 xs_mb_100">
+    <div class="container">
+        <div class="row wow fadeInUp">
+            <div class="col-xl-8 m-auto">
+                <div class="section_heading mb_40">
+                    <h2>Our Popular food item </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row popular_food_slider">
+            @foreach (MenuProduct pro in Model.MenuProducts)
+            {
+                <div class="col-xl-3 wow fadeInUp">
+                    <div class="popular_food_item">
+                        <span class="tags">New</span>
+                        <a href="#" class="img">
+                            <img src="assets/images/@pro.Image" alt="Food" class="img-fluid w-100">
+                        </a>
+                        <a class="title" href="menu_details.html">@pro.ProductName</a>
+                        <a class="see_btn" href="menu_details.html">See Menu <i class="far fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            }
+         
+            <div class="col-xl-3 wow fadeInUp">
+                <div class="popular_food_item">
+                    <span class="tags">New</span>
+                    <a href="#" class="img">
+                        <img src="assets/images/popular_food_img_2.png" alt="Food" class="img-fluid w-100">
+                    </a>
+                    <a class="title" href="menu_details.html">Chicken Paradise</a>
+                    <a class="see_btn" href="menu_details.html">See Menu <i class="far fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-xl-3 wow fadeInUp">
+                <div class="popular_food_item">
+                    <span class="tags">New</span>
+                    <a href="#" class="img">
+                        <img src="assets/images/popular_food_img_3.png" alt="Food" class="img-fluid w-100">
+                    </a>
+                    <a class="title" href="menu_details.html">Soft Drinks</a>
+                    <a class="see_btn" href="menu_details.html">See Menu <i class="far fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-xl-3 wow fadeInUp">
+                <div class="popular_food_item">
+                    <span class="tags">New</span>
+                    <a href="#" class="img">
+                        <img src="assets/images/popular_food_img_4.png" alt="Food" class="img-fluid w-100">
+                    </a>
+                    <a class="title" href="menu_details.html">Spinach salad</a>
+                    <a class="see_btn" href="menu_details.html">See Menu <i class="far fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="col-xl-3 wow fadeInUp">
+                <div class="popular_food_item">
+                    <span class="tags">New</span>
+                    <a href="#" class="img">
+                        <img src="assets/images/popular_food_img_5.png" alt="Food" class="img-fluid w-100">
+                    </a>
+                    <a class="title" href="menu_details.html">Chicken Paradise</a>
+                    <a class="see_btn" href="menu_details.html">See Menu <i class="far fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="menu_item_2 menu_item_4 mt pt_125 xs_pt_85 pb_140 xs_pb_100">
+    <div class="container">
+        <div class="row wow fadeInUp">
+            <div class="col-xl-8">
+                <div class="section_heading heading_left mb_25">
+                    <h2>Popular Menu items</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row menu_4_slider">
+            <div class="col-12">
+                <div class="row justify-content-between">
+                    @foreach (MenuProduct product in Model.MenuProducts)
+                    {
+                        <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                            <div class="single_menu_2">
+                                <div class="single_menu_2_img">
+                                    <img src="~/assets/images/@product.Image" alt="menu" class="img-fluid w-100">
+                                </div>
+                                <div class="single_menu_2_text">
+                                    <a class="title" href="menu_details.html"><span>@product.ProductName</span></a>
+                                    <p>@product.ProductDescription</p>
+                                    <h3>$@product.ProductMPrice</h3>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                 @*    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_1.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>chicken Buffalo wing</span></a>
+                                <p>American breakfast composed of breakfast items</p>
+                                <h3>$30</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_2.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Chicken Strip Basket</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$45</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_2.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Double patty Hamburger</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$75</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_3.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$80</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_3.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Pasta Pappardelle</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$55</h3>
+                            </div>
+                        </div>
+                    </div> *@
+                   
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row justify-content-between">
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_1.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Hamburger Veggie</span></a>
+                                <p>American breakfast composed of breakfast items</p>
+                                <h3>$60</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_1.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>chicken Buffalo wing</span></a>
+                                <p>American breakfast composed of breakfast items</p>
+                                <h3>$30</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_2.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Chicken Strip Basket</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$45</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_2.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Double patty Hamburger</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$75</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_3.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$80</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                        <div class="single_menu_2">
+                            <div class="single_menu_2_img">
+                                <img src="assets/images/menu_item_4_img_3.jpg" alt="menu" class="img-fluid w-100">
+                            </div>
+                            <div class="single_menu_2_text">
+                                <a class="title" href="menu_details.html"><span>Pasta Pappardelle</span></a>
+                                <p>Homemade pizza crust, pizza sauce</p>
+                                <h3>$55</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="menu_page_1_menu_2 menu_item_2 pt_105 xs_pt_85">
+    <div class="container">
+        <div class="row wow fadeInUp">
+            <div class="col-xl-8 m-auto">
+                <div class="section_heading mb_45">
+                    <h2>Delicious Menu</h2>
+                </div>
+            </div>
+        </div>
+        <div id="schedule">
+            <div class="colorful-tab-wrapper" id="filter_area">
+                <div class="row mb_15 wow fadeInUp">
+                    <div class="col-xxl-8 col-lg-9 m-auto">
+                        <ul class="filter_btn_area">
+                            <li class="active"><a href="#item_1">MORNING</a></li>
+                            <li><a href="#item_2">WEEKDAY LUNCH</a></li>
+                            <li><a href="#item_3">DINNER</a></li>
+                            <li><a href="#item_4">FAST FOOD</a></li>
+                            <li><a href="#item_5">BEVERAGE</a></li>
+                            <li><a href="#item_6">DRESSERT</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="colorful-tab-content active" id="item_1">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_1.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Hamburger
+                                                    Veggie
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_2.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    chicken Buffalo
+                                                    wing
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$30</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_3.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Chicken Strip
+                                                    Basket
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_4.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Double patty
+                                                    Hamburger
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$75</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_5.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$80</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_6.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Pasta
+                                                    Pappardelle
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$55</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_7.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Neapolitan-style
+                                                    pizza
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6 wow fadeInUp">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_8.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Buffalo wing</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$70</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="colorful-tab-content" id="item_2">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_1.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Hamburger
+                                                    Veggie
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_2.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    chicken Buffalo
+                                                    wing
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$30</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_3.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Chicken Strip
+                                                    Basket
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_4.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Double patty
+                                                    Hamburger
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$75</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_5.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$80</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_6.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Pasta
+                                                    Pappardelle
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$55</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_7.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Neapolitan-style
+                                                    pizza
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_8.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Buffalo wing</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$70</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="colorful-tab-content" id="item_3">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_1.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Hamburger
+                                                    Veggie
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_2.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    chicken Buffalo
+                                                    wing
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$30</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_3.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Chicken Strip
+                                                    Basket
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_4.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Double patty
+                                                    Hamburger
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$75</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_5.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$80</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_6.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Pasta
+                                                    Pappardelle
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$55</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_7.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Neapolitan-style
+                                                    pizza
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_8.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Buffalo wing</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$70</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="colorful-tab-content" id="item_4">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_1.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Hamburger
+                                                    Veggie
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_2.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    chicken Buffalo
+                                                    wing
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$30</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_3.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Chicken Strip
+                                                    Basket
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_4.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Double patty
+                                                    Hamburger
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$75</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_5.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$80</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_6.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Pasta
+                                                    Pappardelle
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$55</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_7.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Neapolitan-style
+                                                    pizza
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_8.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Buffalo wing</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$70</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="colorful-tab-content" id="item_5">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_1.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Hamburger
+                                                    Veggie
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_2.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    chicken Buffalo
+                                                    wing
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$30</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_3.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Chicken Strip
+                                                    Basket
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_4.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Double patty
+                                                    Hamburger
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$75</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_5.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$80</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_6.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Pasta
+                                                    Pappardelle
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$55</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_7.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Neapolitan-style
+                                                    pizza
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_8.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Buffalo wing</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$70</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="colorful-tab-content" id="item_6">
+                            <div class="row justify-content-between">
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_1.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Hamburger
+                                                    Veggie
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_2.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    chicken Buffalo
+                                                    wing
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$30</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_3.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Chicken Strip
+                                                    Basket
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$45</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_4.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Double patty
+                                                    Hamburger
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$75</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_5.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Roast chicken</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$80</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_6.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Pasta
+                                                    Pappardelle
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$55</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_7.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html">
+                                                <span>
+                                                    Neapolitan-style
+                                                    pizza
+                                                </span>
+                                            </a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$60</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-5 col-lg-6">
+                                    <div class="single_menu_2">
+                                        <div class="single_menu_2_img">
+                                            <img src="assets/images/menu_2_img_8.jpg" alt="menu"
+                                                 class="img-fluid w-100">
+                                        </div>
+                                        <div class="single_menu_2_text">
+                                            <a class="title" href="menu_details.html"><span>Buffalo wing</span></a>
+                                            <p>Homemade pizza crust, pizza sauce</p>
+                                            <h3>$70</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--==========================
+    MENU STYLE 01 END
+===========================-->
